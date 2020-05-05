@@ -1,7 +1,7 @@
 Todo
-functionality
-  - use local storage for lowest-scoring game
-style
+- functionality
+  - bonus point: add lowest-scoring game by using local storage
+- style
   - animation for flipped a card (to show it and to show the back of the card)
   - tranforms the game title text "MATCH -A- GIF" 
 
@@ -14,5 +14,5 @@ What I learned
 source: https://stackoverflow.com/questions/27765666/passing-variable-through-javascript-from-one-html-page-to-another-page
 
 - CSS (see style.css)
- vertically center text in div by using line-height
- align div with text
+  - vertically center text in div by using line-height
+  - align div with text
