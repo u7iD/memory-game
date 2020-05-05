@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="divStartPage">
+      <div class="appTitle">
+        <h1 class="title">MATCH</h1>
+        <h1 class="title">-A-</h1>
+        <h1 class="title">GIF!</GIF>
+      </div>
+      <div class="divNumOfCards">
+        <label>How many unique cards would you like? <br/> Use 3 cards or select any number between 2 and 12, including 2 or 12</label>
+        <input class="numOfUniqueCards" placeholder="3" type="text"/>
+      </div>
+      <button class="btnStart">Start</button>
+  </div>
+  <script type="text/javascript">
+    var inputEle = document.getElementsByClassName("numOfUniqueCards")[0];
+    var btnStart = document.getElementsByClassName("btnStart")[0];
+    btnStart.addEventListener("click", function() {
+      var inputVal = +inputEle.value;
+      if (!inputVal || inputVal < 2 || inputVal > 12) {
+        localStorage.setItem("numOfUniqueCards", +inputEle.placeholder);
+        } else {
+        localStorage.setItem("numOfUniqueCards", inputVal);
+        }
+      window.location='game.html';
+    });
+  </script>
+  </body>
+</html>
