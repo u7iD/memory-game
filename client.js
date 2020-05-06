@@ -98,7 +98,7 @@ function cardClick(event) {
     return;
   }
 
-  // show card and increment counter
+  // numOfCardsShown should be 0 or 1, show card and increment counter
   showCard(currentCard);
   numOfCardsShown++;
   divCounter.textContent = ++totalCardsShown;
@@ -109,16 +109,17 @@ function cardClick(event) {
     if (isAMatch(currentCard, firstCard)) {
       currentCard.setAttribute("data-matched", true);
       firstCard.setAttribute("data-matched", true);
+      firstCard = null;
+      numOfCardsShown = 0;
     } else {
-      numOfCardsShown = 2;
       // show the current card for at least second
-      setTimeout(turnCardBack, 1000, currentCard);
-      // otherwise if I code like this the current card doesn't appear
-      // turnCardBack(currentCard);
-      setTimeout(turnCardBack, 1000, firstCard);
+      setTimeout(function () {
+        turnCardBack(currentCard);
+        turnCardBack(firstCard);
+        numOfCardsShown = 0;
+        firstCard = null;
+      }, 1000);
     }
-    firstCard = null;
-    numOfCardsShown = 0;
   }
 }
 
